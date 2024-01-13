@@ -2,13 +2,14 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import avatar from '../assets/profile.png'
 import { Toaster} from 'react-hot-toast'
-import {useFormik } from 'formik'
+import { useFormik } from 'formik'
 import styles from '../styles/Username.module.css'
 import { usernameValidate } from '../helper/validate'
 
 export const Username = () => {
   const formik = useFormik({
     initialValues: { username: '' },
+    validate: usernameValidate,
     validateOnBlur: false,
     validateOnChange: false,
 

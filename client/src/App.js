@@ -8,7 +8,7 @@ import Recovery from './components/Recovery';
 import Reset from './components/Reset';
 import PageNotFound from './components/PageNotFound';
 
-/**root routes**/
+/*root routes*/
 const router = createBrowserRouter([
   {
     path: '/',
