@@ -14,6 +14,9 @@ export async function passwordValidate(values){
     return errors;
 }
 
+
+
+
 // validate username
 function usernameVerify(error = {}, values){
     if(!values.username){
@@ -40,3 +43,12 @@ function passwordVerify(errors ={}, values) {
         errors.password = toast.error("At least one special character is required");
     }
 }
+
+// validate reset password
+export async function resetPasswordValidation(values){
+    const errors = passwordVerify({}, values);
+
+    if(values.password !== values.confirm_pwd){
+        errors.exist = toast.error("Password NOT match...!");
+    }
+} 
