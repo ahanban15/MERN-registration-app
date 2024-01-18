@@ -9,15 +9,15 @@ import { passwordValidate } from '../helper/validate'
 import convertToBase64 from '../helper/convert'
 
 // import Password from './Password';
-
-export default function Password() {
+export default function Register() {
 
   const [file, setFile] = useState()
 
   const formik = useFormik({
-    initialValues: { email: 'abc@gmail.com', 
-    username: 'abc',    
-    password: 'ahan_123' 
+    initialValues: { 
+      email: 'abc@gmail.com', 
+      username: 'abc',    
+      password: 'ahan_123' 
   },
 
     validate: registerValidation,
