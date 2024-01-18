@@ -1,9 +1,9 @@
 import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan'
+import connect from './database/conn.js';
 
 const app = express()
-
 
 //middlewares
 app.use(express.json());
@@ -21,10 +21,17 @@ app.get('/', (req, res)=>{
 });
 
 // Start server only when we have valid connection
-
-
-// Start server
-app.listen(port, ()=>{
-    console.log(`Server is running on http://localhost:${port}`);
+connect().then(()=>{
+    try{
+        app.listen(port, ()=>{
+            console.log(`Server is running on http://localhost:${port}`);
+        })
+    }catch(error){
+        console.log("Cannot connect to database...!");
+    }
+}).catch(error =>{
+    console.log("Invalid database connection...!");
 })
+
+
 
