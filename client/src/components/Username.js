@@ -5,6 +5,7 @@ import { Toaster} from 'react-hot-toast'
 import { useFormik } from 'formik'
 import styles from '../styles/Username.module.css'
 import { usernameValidate } from '../helper/validate'
+import { useAuthStore } from '../../store/store'
 
 export const Username = () => {
   const formik = useFormik({
